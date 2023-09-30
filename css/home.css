@@ -1,0 +1,49 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+*{
+    margin: 0 0;
+    padding: 0 0;
+}
+
+.titulo{
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 40px;
+    margin: 20px;
+    
+}
+
+.hero{
+    background-image: url(../img/fondo-veterinaria.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 550px;
+    background-position: center;
+    max-width: auto;
+    margin-top: 30px ;
+}
+
+.navegacion{
+    display: flex;
+    justify-content: space-around;
+    border-bottom-style: solid;  
+    padding: 15px; 
+
+}
+
+.enlace{
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+/* 
+.contenedor a{
+    border-bottom-style: solid 5px black;
+} */
