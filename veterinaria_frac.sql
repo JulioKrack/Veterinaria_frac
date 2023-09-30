@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-09-2023 a las 06:17:10
+-- Tiempo de generación: 30-09-2023 a las 06:46:42
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -30,6 +30,24 @@ SET time_zone = "+00:00";
 CREATE TABLE `administrador` (
   `id_administrador` int(20) NOT NULL,
   `codigo` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `administrador`
+--
+
+INSERT INTO `administrador` (`id_administrador`, `codigo`) VALUES
+(1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `atencion`
+--
+
+CREATE TABLE `atencion` (
+  `id_atencion` int(20) NOT NULL,
+  `codigo` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -71,12 +89,12 @@ CREATE TABLE `detalle_de_compra` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `empleado`
+-- Estructura de tabla para la tabla `limpieza`
 --
 
-CREATE TABLE `empleado` (
-  `id_empleado` int(20) NOT NULL,
-  `codigo` int(4) NOT NULL
+CREATE TABLE `limpieza` (
+  `id_limpieza` int(20) NOT NULL,
+  `codigo` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -110,6 +128,13 @@ CREATE TABLE `persona` (
   `estado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `persona`
+--
+
+INSERT INTO `persona` (`codigo`, `nombre`, `dni`, `correo`, `contrasenia`, `telefono`, `rol`, `estado`) VALUES
+(1, 'Roberto', 12345678, 'admn@hotmail.com', 'administrador', 987654321, 'administrador', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -136,7 +161,19 @@ CREATE TABLE `reserva_de_citas` (
   `fecha_reservada` datetime NOT NULL,
   `asunto` varchar(255) NOT NULL,
   `estado` tinyint(1) NOT NULL,
-  `id_administrador` int(20) NOT NULL
+  `id_administrador` int(20) NOT NULL,
+  `id_veterinario` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `veterinario`
+--
+
+CREATE TABLE `veterinario` (
+  `id_veterinario` int(20) NOT NULL,
+  `codigo` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -148,6 +185,13 @@ CREATE TABLE `reserva_de_citas` (
 --
 ALTER TABLE `administrador`
   ADD PRIMARY KEY (`id_administrador`),
+  ADD KEY `codigo` (`codigo`);
+
+--
+-- Indices de la tabla `atencion`
+--
+ALTER TABLE `atencion`
+  ADD PRIMARY KEY (`id_atencion`),
   ADD KEY `codigo` (`codigo`);
 
 --
@@ -172,10 +216,10 @@ ALTER TABLE `detalle_de_compra`
   ADD KEY `id_producto` (`id_producto`);
 
 --
--- Indices de la tabla `empleado`
+-- Indices de la tabla `limpieza`
 --
-ALTER TABLE `empleado`
-  ADD PRIMARY KEY (`id_empleado`),
+ALTER TABLE `limpieza`
+  ADD PRIMARY KEY (`id_limpieza`),
   ADD KEY `codigo` (`codigo`);
 
 --
@@ -203,7 +247,15 @@ ALTER TABLE `producto`
 ALTER TABLE `reserva_de_citas`
   ADD PRIMARY KEY (`id_reserva`),
   ADD KEY `id_cliente` (`id_cliente`),
-  ADD KEY `id_administrador` (`id_administrador`);
+  ADD KEY `id_administrador` (`id_administrador`),
+  ADD KEY `id_veterinario` (`id_veterinario`);
+
+--
+-- Indices de la tabla `veterinario`
+--
+ALTER TABLE `veterinario`
+  ADD PRIMARY KEY (`id_veterinario`),
+  ADD KEY `codigo` (`codigo`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -213,7 +265,13 @@ ALTER TABLE `reserva_de_citas`
 -- AUTO_INCREMENT de la tabla `administrador`
 --
 ALTER TABLE `administrador`
-  MODIFY `id_administrador` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_administrador` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `atencion`
+--
+ALTER TABLE `atencion`
+  MODIFY `id_atencion` int(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `carrito_de_compra`
@@ -228,10 +286,10 @@ ALTER TABLE `cliente`
   MODIFY `id_cliente` int(20) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `empleado`
+-- AUTO_INCREMENT de la tabla `limpieza`
 --
-ALTER TABLE `empleado`
-  MODIFY `id_empleado` int(20) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `limpieza`
+  MODIFY `id_limpieza` int(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `mascota`
@@ -243,7 +301,7 @@ ALTER TABLE `mascota`
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `codigo` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `codigo` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
@@ -258,6 +316,12 @@ ALTER TABLE `reserva_de_citas`
   MODIFY `id_reserva` int(20) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `veterinario`
+--
+ALTER TABLE `veterinario`
+  MODIFY `id_veterinario` int(20) NOT NULL AUTO_INCREMENT;
+
+--
 -- Restricciones para tablas volcadas
 --
 
@@ -266,6 +330,12 @@ ALTER TABLE `reserva_de_citas`
 --
 ALTER TABLE `administrador`
   ADD CONSTRAINT `administrador_ibfk_1` FOREIGN KEY (`codigo`) REFERENCES `persona` (`codigo`);
+
+--
+-- Filtros para la tabla `atencion`
+--
+ALTER TABLE `atencion`
+  ADD CONSTRAINT `atencion_ibfk_1` FOREIGN KEY (`codigo`) REFERENCES `persona` (`codigo`);
 
 --
 -- Filtros para la tabla `carrito_de_compra`
@@ -287,10 +357,10 @@ ALTER TABLE `detalle_de_compra`
   ADD CONSTRAINT `detalle_de_compra_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`);
 
 --
--- Filtros para la tabla `empleado`
+-- Filtros para la tabla `limpieza`
 --
-ALTER TABLE `empleado`
-  ADD CONSTRAINT `empleado_ibfk_1` FOREIGN KEY (`codigo`) REFERENCES `persona` (`codigo`);
+ALTER TABLE `limpieza`
+  ADD CONSTRAINT `limpieza_ibfk_1` FOREIGN KEY (`codigo`) REFERENCES `persona` (`codigo`);
 
 --
 -- Filtros para la tabla `mascota`
@@ -303,7 +373,14 @@ ALTER TABLE `mascota`
 --
 ALTER TABLE `reserva_de_citas`
   ADD CONSTRAINT `reserva_de_citas_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id_cliente`),
-  ADD CONSTRAINT `reserva_de_citas_ibfk_2` FOREIGN KEY (`id_administrador`) REFERENCES `administrador` (`id_administrador`);
+  ADD CONSTRAINT `reserva_de_citas_ibfk_2` FOREIGN KEY (`id_administrador`) REFERENCES `administrador` (`id_administrador`),
+  ADD CONSTRAINT `reserva_de_citas_ibfk_3` FOREIGN KEY (`id_veterinario`) REFERENCES `veterinario` (`id_veterinario`);
+
+--
+-- Filtros para la tabla `veterinario`
+--
+ALTER TABLE `veterinario`
+  ADD CONSTRAINT `veterinario_ibfk_1` FOREIGN KEY (`codigo`) REFERENCES `persona` (`codigo`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
