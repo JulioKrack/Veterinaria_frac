@@ -14,7 +14,7 @@ html {
     display: block;
     text-align: center;
     text-transform: uppercase;
-    padding: 40px;
+    padding: 35px auto 40px auto;
     margin: 20px;
     
 }
@@ -29,22 +29,45 @@ html {
     margin-top: 30px ;
 }
 
-.navegacion{
+.contenedor {
+    background-color: #333;
+    padding: 10px;
+
+  }
+  .navegacion {
     display: flex;
     justify-content: space-around;
-    border-bottom-style: solid;  
-    padding: 15px; 
-
-}
-
-.enlace{
+    padding: 5px 10px;
+  }
+  
+  .navegacion a {
     text-decoration: none;
-    text-transform: uppercase;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  .navegacion a:hover {
+    background-color: #555;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  .navegacion a:active{
+    background-color: #5AFA90;
+    color:black;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+
+#inicio{
+    background-color: #5AFA90;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;    
 }
 
-.enlace:hover{
-    border-bottom-style: solid 5px black;
-}
+
 
 .ingreso{
     display: flex;
