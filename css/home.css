@@ -9,7 +9,7 @@ html {
     margin: 0 0;
     padding: 0 0;
 }
-
+/* El header */
 .titulo{
     display: block;
     text-align: center;
@@ -23,10 +23,10 @@ html {
     background-image: url(../img/fondo-veterinaria.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 550px;
+    height: 500px;
     background-position: center;
     max-width: auto;
-    margin-top: 30px ;
+    size: 300px;
 }
 
 .contenedor {
@@ -59,7 +59,7 @@ html {
     padding: 10px 20px;
     border-radius: 5px;
   }
-
+/* cambias el inicio por el nosotros creas el id="nosotro"para mantener la uniformidad de la barra espero */
 #inicio{
     background-color: #5AFA90;
     color: black;
@@ -96,6 +96,39 @@ html {
     transition: 0.5s;
 }
 
-/* .contenedor a{
-    border-bottom-style: solid 5px black;
-}  */
+.pie-pagina{
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+.nuestros-servicios{
+    background-color: #5AFA90;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px 0px;
+    text-transform: uppercase;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+.servicio{
+    padding: 10px;
+    margin: 10px;
+}
+
+.servicio-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #333;
+    transition: 0.5s;
+}
+
+.servicio-img:hover{
+    border: 5px solid #5AFA90;
+    transition: 0.5s;
+}
