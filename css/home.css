@@ -142,5 +142,6 @@ html {
   height: 200px;
   transition: 0.5s;
   display: block;
+  margin: 0 auto;
 }
 /* hoola */
