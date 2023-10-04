@@ -115,20 +115,35 @@ html {
     transition: 0.5s;
 }
 
-.servicio{
-    padding: 10px;
-    margin: 10px;
+.servicios {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px;
+  padding: 10px;
 }
 
-.servicio-img{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 5px solid #333;
-    transition: 0.5s;
+.servicio {
+  text-align: center;
+  flex: 1;
+  margin: 0 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
 }
 
-.servicio-img:hover{
-    border: 5px solid #5AFA90;
-    transition: 0.5s;
+.servicio-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid #333;
+  transition: 0.5s;
+  display: block;
+}
+
+.servicio-img:hover {
+  border: 5px solid #5AFA90;
+  transition: 0.5s;
 }
