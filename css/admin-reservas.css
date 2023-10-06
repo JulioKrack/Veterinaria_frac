@@ -1,20 +1,64 @@
-        /* Style the dashboard panel */
-        .dashboard-panel {
-            background-color: #f2f2f2;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 20px;
-            margin: 20px;
-        }
-        
-        /* Style the panel header */
-        .dashboard-panel h2 {
-            font-size: 24px;
-            margin-top: 0;
-        }
-        
-        /* Style the panel content */
-        .dashboard-panel p {
-            font-size: 16px;
-            margin-bottom: 0;
-        }
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+*{
+    margin: 0 0;
+    padding: 0 0;
+}
+
+
+body{
+    min-height: 100vh;
+    background-color: #95edd1;
+}
+
+nav{
+  position: fixed;
+  top:0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #d5e1de;
+}
+
+
+
+.menu-items{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+    padding: 0 0;
+    margin: 0 0;
+    list-style: none;
+    background-color: #d5e1de;
+}
+
+.menu-items a{
+    text-decoration: none;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 10px 0;
+    margin: 0 0;
+    width: 100%;
+    text-align: center;
+    display: block;
+    border: 1px solid #000;
+    transition: all 0.3s ease;
+}
+
+
+.menu-items a:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+.gestion-reservas{
+    margin-left: 250px;
+    padding: 20px 20px;
+}
