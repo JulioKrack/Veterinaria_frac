@@ -1,3 +1,4 @@
+<
 <!DOCTYPE html>
 <lang="en">
 <head>
@@ -11,7 +12,7 @@
 
     <nav class="menu">
         <div class="menu-items">
-            <a href="admin-reservas.html" class="gestion-reservas">Gestionar Reservas</a>
+            <a href="admin-reservas.php" class="gestion-reservas">Gestionar Reservas</a>
             <a href="#">Gestionar Empleados</a>
         </div>
     </nav>
