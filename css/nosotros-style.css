@@ -50,7 +50,7 @@
     border-radius: 5px;
   }
 /* cambias el inicio por el nosotros creas el id="nosotro"para mantener la uniformidad de la barra espero */
-#inicio{
+#nosotros{
     background-color: #5AFA90;
     color: black;
     padding: 10px 20px;
@@ -227,4 +227,30 @@
     .elementor-element-text-team{
         padding: 0px 10px;
     }
+}
+
+.ingreso{
+    display: flex;
+    justify-content: right;
+    padding: 10px;
+    margin: 10px;
+}
+
+.btn-login-registro{
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    border: 1px solid black;
+    margin: 10px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.btn-login-registro:hover{
+    background-color: #5AFA90;
+    color: white;
+    transition: 0.5s;
 }
