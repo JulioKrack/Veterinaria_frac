@@ -1,4 +1,6 @@
-<
+<?php
+include("../admin/bd.php")
+?>
 <!DOCTYPE html>
 <lang="en">
 <head>
@@ -9,6 +11,14 @@
 </head>
 
 <body>
+    <header class="superior">
+        <div class="photo-user">
+            <img src="../img/usuario-admin.png" alt="logo" class="user-img">
+        </div>
+        <div class="logout">
+            <a href="index.html">Cerrar Sesión</a>
+        </div>
+    </header>
 
     <nav class="menu">
         <div class="menu-items">
@@ -17,19 +27,10 @@
         </div>
     </nav>
     <section class="dashboard">
-        <div class="top">
-            <i class="uil uil-bars sidebar-toggle"></i>
-
-            <div class="search-box">
-                <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here...">
-            </div>
-            
-            <img src="../img/usuario-admin.png" alt="">
-        </div>
 
     <!-- programación de animaciones -->
-    <script src="../js/admin-reservas.js"></script>
+    <!-- <script src="../js/admin-reservas.js"></script> -->
 
 </body>
 </html>
+
