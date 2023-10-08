@@ -1,4 +1,3 @@
-
 <?php
 include("../admin/bd.php");
 
@@ -59,28 +58,5 @@ $conn->close();
         <input type="submit" value="Submit">
     </form>
 
-$id_cliente = $_POST['id_cliente'];
-$fecha_reservada = $_POST['fecha_reservada'];
-$asunto = $_POST['asunto'];
-$estado = $_POST['estado'];
-$id_administrador = $_POST['id_administrador'];
-$id_veterinario = $_POST['id_veterinario'];
-
-    // Check if the required fields are not empty
-    if (!empty($id_cliente) && !empty($fecha_reservada) && !empty($asunto) && !empty($estado) && !empty($id_administrador) && !empty($id_veterinario)) {
-        // TODO: Validate the data before inserting into the database
-
-        // Insert data into the database
-        $sql = "INSERT INTO reserva_de_citas (id_cliente, fecha_reservada, asunto, estado, id_administrador, id_veterinario)
-                VALUES ('$id_cliente', '$fecha_reservada', '$asunto', '$estado', '$id_administrador', '$id_veterinario')";
-    }
-if ($conn->query($sql) === TRUE) {
-    echo "Reservation created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-$mysqli->close();
-?>
 </body>
 </html>
