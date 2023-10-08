@@ -11,13 +11,17 @@ include("../admin/bd.php")
 </head>
 
 <body>
-    <header class="superior">
-        <div class="photo-user">
-            <img src="../img/usuario-admin.png" alt="logo" class="user-img">
+    <header class="h-sup">
+        <h2 class="panel"><span class="pa-admin">Panel de Administración</span></h2>
+        <div class="superior">
+            <div class="photo-user">
+                <img src="../img/usuario-admin.png" alt="logo" class="user-img">
+            </div>
+            <div class="logout">
+                <a href="index.html" class="cerrar-sesion">Cerrar Sesión</a>
+            </div>
         </div>
-        <div class="logout">
-            <a href="index.html">Cerrar Sesión</a>
-        </div>
+
     </header>
 
     <nav class="menu">
@@ -28,6 +32,24 @@ include("../admin/bd.php")
     </nav>
     <section class="dashboard">
 
+    <!-- make tree buttoms of cruds in the main -->
+
+    <main class="main">
+        <div class="main-items">
+            <div class="main-item">
+                <a href="new_reservation.php" class="new-reservation">Nueva Reserva</a>
+            </div>
+            <div class="main-item">
+                <a href="read_reservation.php" class="read-reservation">Ver Reservas</a>
+            </div>
+            <div class="main-item">
+                <a href="del_reservation.php" class="del-reservation">Eliminar Reserva</a>
+            </div>
+            <div class="main-item">
+                <a href="crud_reservation.php" class="crud-reservation">crud Reserva</a> 
+            </div>
+        </div>
+    </main>
     <!-- programación de animaciones -->
     <!-- <script src="../js/admin-reservas.js"></script> -->
 

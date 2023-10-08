@@ -1,22 +1,12 @@
 <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "veterinaria_frac";
 
-// make a coneccion to the database in php to phpmyadmin
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-$servidor="localhost";
-$baseDeDatos="veterinaria_frac";
-$usuario="root";
-$contrasenia="";
-
-try{
-    $conexion = new PDO("mysql:host=$servidor;dbname=$baseDeDatos",$usuario,$contrasenia);
-    // echo "conexion exitosa";
-
-}catch(Exception $error){
-    echo $error->getMessage();
-}
-
-
-
-
-
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 ?>
