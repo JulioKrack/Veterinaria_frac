@@ -45,7 +45,7 @@ $id_veterinario = $_POST['id_veterinario'];
         // Insert data into the database
         $sql = "INSERT INTO reserva_de_citas (id_cliente, fecha_reservada, asunto, estado, id_administrador, id_veterinario)
                 VALUES ('$id_cliente', '$fecha_reservada', '$asunto', '$estado', '$id_administrador', '$id_veterinario')";
-
+    }
 if ($conn->query($sql) === TRUE) {
     echo "Reservation created successfully";
 } else {
