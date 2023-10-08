@@ -32,12 +32,11 @@
                 </form>
                 <form action="" class="formulario_register">
                     <h2>Registrarse</h2>
-                    <input type="text" placeholder="Nombre Completo">
-                    <input type="number" placeholder="DNI">
-                    <input type="number" placeholder="cellphone">
-                    <input type="email" placeholder="Correo Electrónico">
-                    <input type="text" placeholder="Usuario">
-                    <input type="password" placeholder="Contraseña">
+                    <input type="text" placeholder="Nombre Completo" name="nombre">
+                    <input type="number" placeholder="DNI" name="dni">
+                    <input type="number" placeholder="cellphone" name="correo">
+                    <input type="email" placeholder="Correo Electrónico" name="correo">
+                    <input type="password" placeholder="Contraseña" name="contrasenia">
                     <button type="button">envio</button>
                 </form>
             </div>

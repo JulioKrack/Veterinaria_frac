@@ -11,6 +11,7 @@ include("../admin/bd.php")
 </head>
 
 <body>
+    
     <header class="h-sup">
         <h2 class="panel"><span class="pa-admin">Panel de Administración</span></h2>
         <div class="superior">
