@@ -1,7 +1,7 @@
 <?php
 include("../admin/bd.php");
 
-$sql = "SELECT * FROM reserva_de_citas";
+$sql = "SELECT * FROM reserva_de_citas ORDER BY id_reserva DESC";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
