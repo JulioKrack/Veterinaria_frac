@@ -93,8 +93,6 @@ nav{
     justify-content: center;
 }
 
-
-
 .menu-items a{
     text-decoration: none;
     color: #000;
@@ -129,7 +127,30 @@ nav{
     padding: 20px;
 }
 
-/* Estilo para la tabla */
-table {
-    width: 100%; /* O ajusta según sea necesario */
+/* .dashboard
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+} */
+
+.tabla{
+    margin-top: 20px;
+    text-align: right;
+    align-items: center;
+    display: flex;
+    justify-content: right;
+}
+
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
 }

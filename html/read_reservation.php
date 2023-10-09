@@ -27,22 +27,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD Reserva de Citas</title>
     <link rel="stylesheet" href="../css/admin-reservas.css">
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
 
-        table, th, td {
-            border: 1px solid black;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-    </style>
 </head>
 <body>
 <header class="h-sup">
@@ -104,7 +89,7 @@ $conn->close();
     </div>
 
     <section class="dashboard">
-        <table>
+        <table class="tabla">
             <tr>
                 <th>ID Reserva</th>
                 <th>ID Cliente</th>
