@@ -123,3 +123,13 @@ nav{
 .main{
     text-align: right;
 }
+
+.content {
+    margin-left: 250px; /* Ancho del nav */
+    padding: 20px;
+}
+
+/* Estilo para la tabla */
+table {
+    width: 100%; /* O ajusta según sea necesario */
+}

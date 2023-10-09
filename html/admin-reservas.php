@@ -54,6 +54,9 @@ include("../admin/bd.php")
             </div>
         </div>
     </main>
+    <div>
+        
+    </div>
     <!-- programación de animaciones -->
     <!-- <script src="../js/admin-reservas.js"></script> -->
 
