@@ -5,16 +5,18 @@ include("../admin/bd.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_cliente = $_POST['id_cliente'];
     $fecha_reservada = $_POST['fecha_reservada'];
+    $hora_reservada = $_POST['hora_reservada'];
     $asunto = $_POST['asunto'];
     $estado = $_POST['estado'];
     $id_administrador = $_POST['id_administrador'];
     $id_veterinario = $_POST['id_veterinario'];
 
     // Validar datos (puedes agregar más validaciones según tus necesidades)
+    $fecha_hora_reserva = $fecha_reservada . ' ' . $hora_reservada;
 
     // Insertar datos en la base de datos
     $sql = "INSERT INTO reserva_de_citas (id_cliente, fecha_reservada, asunto, estado, id_administrador, id_veterinario)
-            VALUES ('$id_cliente', '$fecha_reservada', '$asunto', '$estado', '$id_administrador', '$id_veterinario')";
+            VALUES ('$id_cliente', '$fecha_hora_reserva', '$asunto', '$estado', '$id_administrador', '$id_veterinario')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Reservation created successfully";
@@ -41,7 +43,13 @@ $conn->close();
         <input type="text" name="id_cliente" id="id_cliente" required>
         <br>
         <label for="fecha_reservada">Fecha Reservada</label>
+        <input type="date" id="start" name="fecha_reservada" value="2023-01-01" min="2023-01-01" max="2023-12-31" />
+        <br>
+        <!-- <label for="fecha_reservada">Fecha Reservada</label>
         <input type="text" name="fecha_reservada" id="fecha_reservada" required>
+        <br> -->
+        <label for="hora_reservada">Hora Reservada</label>
+        <input type="text" name="hora_reservada" id="hora_reservada" required>
         <br>
         <label for="asunto">Asunto</label>
         <input type="text" name="asunto" id="asunto" required>

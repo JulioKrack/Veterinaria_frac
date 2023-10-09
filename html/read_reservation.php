@@ -51,7 +51,7 @@ $conn->close();
     <p>
         <a href="new_reservation.php">Agregar</a> |
         <a href="update_reservation.php">Modificar</a> |
-        <a href="delete_reservation.php">Eliminar</a>
+        <a href="del_reservation.php">Eliminar</a>
     </p>
 
     <table>

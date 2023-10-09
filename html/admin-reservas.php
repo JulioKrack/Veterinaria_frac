@@ -49,6 +49,9 @@ include("../admin/bd.php")
             <div class="main-item">
                 <a href="crud_reservation.php" class="crud-reservation">crud Reserva</a> 
             </div>
+            <div class="main-item">
+                <a href="update_reservation.php" class="update_reservation">Actualizar Reserva</a>
+            </div>
         </div>
     </main>
     <!-- programación de animaciones -->
